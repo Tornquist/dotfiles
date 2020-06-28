@@ -1,0 +1,35 @@
+[apply]
+  whitespace = nowarn
+[alias]
+  nb = checkout -b
+  lc = log @{1}.. --stat --no-merges
+  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ar)%Creset' --abbrev-commit --date=relative
+  ff = merge --ff-only @{u}
+[color]
+  diff = auto
+  status = auto
+  branch = auto
+[core]
+  excludesfile = ~/.gitignore
+  quotepath = false
+  whitespace = -blank-at-eol
+[mirror]
+  summary = true
+[branch]
+  autosetupmerge = true
+  autosetuprebase = always
+[pull]
+  rebase = true
+[push]
+  default = upstream
+[rebase]
+  autosquash = true
+[web]
+  browser = open
+[user]
+  name = Nathan Tornquist
+  email = Tornquist@live.com
+[filter "lfs"]
+  clean = git-lfs clean %f
+  smudge = git-lfs smudge %f
+  required = true

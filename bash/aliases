@@ -1,0 +1,9 @@
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
+
+alias reload="source ~/.zshrc"
+alias localip="ipconfig getifaddr en1"
+
+alias ls='ls -la'

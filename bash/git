@@ -1,0 +1,1 @@
+alias githash='echo -n `git rev-parse --short HEAD` | pbcopy'
