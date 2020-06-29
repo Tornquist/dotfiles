@@ -68,3 +68,13 @@ task :uninstall do
     end
   end
 end
+
+task :brew do
+  if !File.exists?("/usr/local/Cellar")
+    `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"`
+  end
+
+  `brew install ack git tmux mysql@5.7 reattach-to-user-namespace`
+  `brew tap homebrew/services`
+  `brew link mysql@5.7 --force`
+end

@@ -7,3 +7,8 @@ A collection of dotfiles and config files.
 Run `rake install` to install zsh, oh-my-zsh and symlink all the config files.
 
 Run `rake uninstall` to remove the symlinks.
+
+## Homebrew
+
+Run `rake brew` to install homebrew and a collection of base packages. Please note,
+brew installation will install and force link mysql@5.7 as mysql.
