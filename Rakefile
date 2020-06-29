@@ -78,3 +78,18 @@ task :brew do
   `brew tap homebrew/services`
   `brew link mysql@5.7 --force`
 end
+
+task :iterm do
+  dir = "~/Library/ApplicationSupport/iTerm2/Scripts/AutoLaunch"
+  `mkdir -p #{dir}`
+  `cp $PWD/custom/iterm_autoswitch.py #{dir}/switch_automatic.py`
+  puts "* Script moved. Continue installation based on README."
+end
+
+task :xcode do
+  dir = "~/Library/Developer/Xcode/UserData/FontAndColorThemes"
+  `mkdir -p #{dir}`
+  `cp $PWD/custom/xcode_dark.xccolortheme #{dir}/DuskDark.xccolortheme`
+  `cp $PWD/custom/xcode_light.xccolortheme #{dir}/DuskLight.xccolortheme`
+  puts "* Themes moved. Continue installation based on README."
+end
