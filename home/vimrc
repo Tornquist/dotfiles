@@ -1,0 +1,24 @@
+" Syntax highlighting
+syntax on
+
+" Line numbering
+set number
+set rnu
+
+" Highlighted column over 80 chars
+set colorcolumn=81
+
+" Tab and shift
+set tabstop=2
+set shiftwidth=2
+set expandtab
+
+" Clipboard
+set clipboard=unnamed
+
+" Underline current line
+set cursorline
+
+" Status line (set and always show)
+set laststatus=2
+set statusline=\ %.99f\ %<%h%m%r%w%=%l/%L\ %P
