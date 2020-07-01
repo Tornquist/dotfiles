@@ -74,9 +74,25 @@ task :brew do
     `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"`
   end
 
-  `brew install ack git tmux mysql@5.7 reattach-to-user-namespace`
+  `brew install ack git tmux reattach-to-user-namespace`
+end
+
+task :mysql do
+  Rake::Task["brew"].invoke
+
+  `brew install mysql@5.7`
   `brew tap homebrew/services`
   `brew link mysql@5.7 --force`
+end
+
+task :node do
+  `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash`
+end
+
+task :ruby do
+  Rake::Task["brew"].invoke
+
+  `brew install chruby ruby-install`
 end
 
 task :iterm do

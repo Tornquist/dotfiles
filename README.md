@@ -6,18 +6,44 @@ their associated tools.
 
 ## Setup
 
+### Install/Uninstall
+
 Run `rake install` to install zsh, oh-my-zsh and symlink all the config files.
 
 Run `rake uninstall` to remove the symlinks.
 
-## Homebrew
+### Homebrew
 
-Run `rake brew` to install homebrew and a collection of base packages. Please note,
-brew installation will install and force link mysql@5.7 as mysql.
+Run `rake brew` to install homebrew and a collection of base packages.
+
+### MySQL
+
+Run `rake mysql` in trigger `rake brew` and then install and force link mysql 5.7
+
+### Node
+
+Run `rake node` to install `nvm`. The environment configuration is included in the
+dotfiles by default, but will only be used when `nvm` is installed.
+
+After installing any changes made by the install script should be verified. In general,
+the changes should match configuration already present (what ships be default).
+
+### Ruby
+
+Run `rake ruby` to install `chruby` and `ruby-install` after an auto-triggered
+`rake brew`. Like Node/nvm, the chruby configuration is included in the dotfiles
+by default, but no ruby versions will be installed by default.
+
+To install the latest stable, use `ruby-install ruby`. Please note,
+`ruby-install ruby` without additional flags will leave a `src/` folder in the
+home directory.
+
+Following installation, it is recommended to add `chruby X.X.X` to `~/.localrc`
+to use the newly installed non-system ruby by default.
 
 ## Light/Dark Mode
 
-Includes themes for light and dark mode in iterm, Sequel Ace (pro), and for the
+Includes themes for light and dark mode in iTerm, Sequel Ace (pro), and for the
 system wallpaper.
 
 ### iTerm 2
