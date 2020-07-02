@@ -70,6 +70,32 @@ Themes must be manually installed and are for the query editor only.
 Autoswitching is not supported, but the application automatically switches
 the rest of the interface.
 
+### Wallpaper
+
+1. Open Automator
+1. Create a new application
+1. Add a single `Run Applescript` step
+1. Add the trailing code block (with updated home dir and filename)
+1. Save as `Light/Dark Wallpaper`
+1. Toggle wallpaper by typing `Lig...` or `Dar...`
+    * Note: This will only toggle the current/focused desktop. This is a limitation
+      of the tooling, but it's still faster than opening system preferences and
+      clicking for each desktop. You can rapidly change all using the keyboard.
+
+```
+on run {input, parameters}
+	
+	set myFile to POSIX file "/Users/<username>/dotfiles/custom/wallpaper_<version>.png" as string
+	tell application "System Events"
+		tell every desktop
+			set picture to myFile
+		end tell
+	end tell
+	
+	return input
+end run
+```
+
 ### Xcode
 
 1. Install Xcode
