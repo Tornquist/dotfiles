@@ -41,6 +41,11 @@ home directory.
 Following installation, it is recommended to add `chruby X.X.X` to `~/.localrc`
 to use the newly installed non-system ruby by default.
 
+### Rust
+
+Run `rake rust` to install `rustup` and `cargo`. The environment configuration
+is included in the dotfiles by default, but will only be used when installed.
+
 ## Light/Dark Mode
 
 Includes themes for light and dark mode in iTerm, Sequel Ace (pro), and for the

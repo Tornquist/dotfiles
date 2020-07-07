@@ -95,6 +95,10 @@ task :ruby do
   `brew install chruby ruby-install`
 end
 
+task :rust do
+  `curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y`
+end
+
 task :iterm do
   dir = "~/Library/ApplicationSupport/iTerm2/Scripts/AutoLaunch"
   `mkdir -p #{dir}`

@@ -16,7 +16,7 @@ for file in ~/dotfiles/bash/*; do
   . "$file"
 done
 
-# Optionally load Node and Ruby managers
+# Optionally load language managers
 if [ -d ~/.nvm ]; then
   export NVM_DIR="$HOME/.nvm"
   [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -27,6 +27,10 @@ if [ -d /usr/local/share/chruby ]; then
   if [ -n "$BASH_VERSION" ] || [ -n "$ZSH_VERSION" ]; then
     source /usr/local/share/chruby/chruby.sh
   fi
+fi
+
+if [ -d ~/.cargo/bin ]; then
+  export PATH="$HOME/.cargo/bin:$PATH"
 fi
 
 # Optionally load .localrc
